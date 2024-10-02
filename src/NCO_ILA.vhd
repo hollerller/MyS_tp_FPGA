@@ -2,7 +2,16 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity NCO is
+entity NCO_ILA is
+    port (
+        clk_i: in std_logic
+    );
+end entity NCO_ILA;
+
+architecture NCO_ILA_arch of NCO_ILA is
+        -- declarations
+
+component NCO is
     port (
         clk_i: in std_logic;
         rst_i: in std_logic;
@@ -10,10 +19,24 @@ entity NCO is
         pha_i: in std_logic_vector(15 downto 0);
         q_o:   out std_logic_vector(11 downto 0)
     );
-end entity NCO;
+end component NCO;
 
-architecture NCO_arch of NCO is
-        -- declarations
+COMPONENT ila_0
+
+PORT (
+	clk : IN STD_LOGIC;
+	probe0 : IN STD_LOGIC_VECTOR(11 DOWNTO 0)
+);
+END COMPONENT  ;
+
+COMPONENT vio_0
+  PORT (
+    clk : IN STD_LOGIC;
+    probe_out0 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    probe_out1 : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+    probe_out2 : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+  );
+END COMPONENT;
 
     type sin_lut_type is array (0 to 4095) of std_logic_vector(11 downto 0);
     constant sin_lut: sin_lut_type := ( 
@@ -4116,6 +4139,10 @@ architecture NCO_arch of NCO is
 
         signal phase_accum: std_logic_vector(15 downto 0);
         signal lut_value: std_logic_vector(11 downto 0);
+        signal probe_rst: std_logic_vector(0 downto 0);
+        signal probe_ena: std_logic_vector(0 downto 0);
+        signal probe_out: std_logic_vector(11 downto 0);
+        signal probe_pha: std_logic_vector(15 downto 0);
         
 
 begin
@@ -4123,16 +4150,33 @@ begin
     process(clk_i)
         begin 
             if rising_edge(clk_i) then
-                if rst_i = '1' then
+                if probe_rst(0) = '1' then
                     phase_accum <= (others => '0');
-                elsif ena_i = '1' then 
-                    phase_accum <= std_logic_vector(unsigned(phase_accum) + unsigned(pha_i));
+                elsif probe_ena(0) = '1' then 
+                    phase_accum <= std_logic_vector(unsigned(phase_accum) + unsigned(probe_pha));
                 end if;
             end if; 
         end process;
 
         lut_value <= std_logic_vector(unsigned(phase_accum(15 downto 4)));
 
-    q_o <= sin_lut(to_integer(unsigned(lut_value)));
+    probe_out <= sin_lut(to_integer(unsigned(lut_value)));
+
+
+ila_inst : ila_0
+PORT MAP (
+	clk => clk_i,
+	probe0 => probe_out
+);
+
+
+vio_inst : vio_0
+  PORT MAP (
+    clk => clk_i,
+    probe_out0 => probe_rst,
+    probe_out1 => probe_ena,
+    probe_out2 => probe_pha
+  );
+
 
 end architecture;
