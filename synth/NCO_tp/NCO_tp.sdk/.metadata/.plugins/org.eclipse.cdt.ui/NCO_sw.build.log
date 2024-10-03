@@ -1,0 +1,8 @@
+23:44:13 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+
+23:44:14 Build Finished (took 164ms)
+

@@ -1,0 +1,12 @@
+vhdl xil_defaultlib  \
+"../../../bd/system/ipshared/0af9/hdl/NCO_v1_0_S00_AXI.vhd" \
+"../../../bd/system/ipshared/0af9/src/NCO.vhd" \
+"../../../bd/system/ipshared/0af9/hdl/NCO_v1_0.vhd" \
+"../../../bd/system/ip/system_NCO_0_0/sim/system_NCO_0_0.vhd" \
+"../../../bd/system/ip/system_rst_ps7_0_100M_0/sim/system_rst_ps7_0_100M_0.vhd" \
+"../../../bd/system/ip/system_vio_0_0/sim/system_vio_0_0.vhd" \
+"../../../bd/system/ip/system_axi_gpio_0_0/sim/system_axi_gpio_0_0.vhd" \
+"../../../bd/system/ip/system_axi_gpio_0_1/sim/system_axi_gpio_0_1.vhd" \
+"../../../bd/system/sim/system.vhd" \
+
+nosort
