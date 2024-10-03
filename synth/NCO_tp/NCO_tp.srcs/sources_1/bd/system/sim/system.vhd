@@ -1,7 +1,7 @@
 --Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2018.1 (win64) Build 2188600 Wed Apr  4 18:40:38 MDT 2018
---Date        : Wed Oct  2 19:39:15 2024
+--Date        : Thu Oct  3 00:09:17 2024
 --Host        : hollerller running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -1370,7 +1370,7 @@ entity system is
     sws_2bits_tri_i : in STD_LOGIC_VECTOR ( 1 downto 0 )
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=13,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=2,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=Global}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=13,numReposBlks=8,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=2,da_clkrst_cnt=2,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -1485,12 +1485,6 @@ architecture STRUCTURE of system is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component system_rst_ps7_0_100M_0;
-  component system_vio_0_0 is
-  port (
-    clk : in STD_LOGIC;
-    probe_in0 : in STD_LOGIC_VECTOR ( 11 downto 0 )
-  );
-  end component system_vio_0_0;
   component system_axi_gpio_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -1539,6 +1533,12 @@ architecture STRUCTURE of system is
     gpio_io_i : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
   end component system_axi_gpio_0_1;
+  component system_ila_0_0 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 11 downto 0 )
+  );
+  end component system_ila_0_0;
   signal NCO_0_q_o : STD_LOGIC_VECTOR ( 11 downto 0 );
   signal buttons_GPIO_TRI_I : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal processing_system7_0_DDR_ADDR : STD_LOGIC_VECTOR ( 14 downto 0 );
@@ -1740,6 +1740,11 @@ buttons: component system_axi_gpio_0_1
       s_axi_wready => ps7_0_axi_periph_M02_AXI_WREADY,
       s_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M02_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => ps7_0_axi_periph_M02_AXI_WVALID
+    );
+ila_0: component system_ila_0_0
+     port map (
+      clk => processing_system7_0_FCLK_CLK0,
+      probe0(11 downto 0) => NCO_0_q_o(11 downto 0)
     );
 processing_system7_0: component system_processing_system7_0_0
      port map (
@@ -1948,10 +1953,5 @@ switches: component system_axi_gpio_0_0
       s_axi_wready => ps7_0_axi_periph_M01_AXI_WREADY,
       s_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M01_AXI_WSTRB(3 downto 0),
       s_axi_wvalid => ps7_0_axi_periph_M01_AXI_WVALID
-    );
-vio_0: component system_vio_0_0
-     port map (
-      clk => processing_system7_0_FCLK_CLK0,
-      probe_in0(11 downto 0) => NCO_0_q_o(11 downto 0)
     );
 end STRUCTURE;

@@ -28,12 +28,17 @@ int main (void)
 	// Inicializar botones
 	XGpio_Initialize(&rstEna, XPAR_BUTTONS_DEVICE_ID);
 	XGpio_SetDataDirection(&rstEna, 1, 0xFFFFFFFF);
+	Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x1));
 
 	while (1){
 
 		buttonState = XGpio_DiscreteRead(&rstEna, 1);
 
-		//if (nextState != buttonState)
+		if (buttonState == 1) {
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x0));
+		} else if (buttonState == 2){
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x2));
+		}
 
 		xil_printf("button Status %x\r\n", buttonState);
 
@@ -41,19 +46,19 @@ int main (void)
 
 		switch (phaseControl_test){
 		case 0:
-			Xil_Out32((XPAR_SWITCHES_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[0]));
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[0]));
 			xil_printf("Phase Increment %i\r\n", pha_i[0]);
 			break;
 		case 1:
-			Xil_Out32((XPAR_SWITCHES_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[1]));
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[1]));
 			xil_printf("Phase Increment %i\r\n", pha_i[1]);
 			break;
 		case 2:
-			Xil_Out32((XPAR_SWITCHES_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[2]));
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[2]));
 			xil_printf("Phase Increment %i\r\n", pha_i[2]);
 			break;
 		case 3:
-			Xil_Out32((XPAR_SWITCHES_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[3]));
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[3]));
 			xil_printf("Phase Increment %i\r\n", pha_i[3]);
 			break;
 

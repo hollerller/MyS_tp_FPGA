@@ -49,7 +49,6 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/system/ip/system_rst_ps7_0_100M_0/sim/system_rst_ps7_0_100M_0.vhd" \
-  "../../../bd/system/ip/system_vio_0_0/sim/system_vio_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_lite_ipif_v3_0_4 \
   "../../../../NCO_tp.srcs/sources_1/bd/system/ipshared/cced/hdl/axi_lite_ipif_v3_0_vh_rfs.vhd" \
@@ -88,14 +87,15 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/system/ip/system_xbar_0/sim/system_xbar_0.v" \
 -endlib
+-makelib xcelium_lib/xil_defaultlib \
+  "../../../bd/system/sim/system.vhd" \
+  "../../../bd/system/ip/system_ila_0_0/sim/system_ila_0_0.vhd" \
+-endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_16 \
   "../../../../NCO_tp.srcs/sources_1/bd/system/ipshared/1229/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/system/ip/system_auto_pc_0/sim/system_auto_pc_0.v" \
--endlib
--makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/system/sim/system.vhd" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v
