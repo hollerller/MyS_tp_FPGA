@@ -16,7 +16,7 @@ L5
 VCM7baRk[1PkIC;@4dUgF92
 Z7 OV;C;10.1d;51
 32
-Z8 !s108 1727903364.965000
+Z8 !s108 1728239887.878000
 Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/davle/Documents/UBA/CESE/MyS/MyS_tp_FPGA/src/NCO.vhd|
 Z10 !s107 C:/Users/davle/Documents/UBA/CESE/MyS/MyS_tp_FPGA/src/NCO.vhd|
 Z11 o-work work -2002 -explicit -O0
@@ -31,6 +31,7 @@ DEx4 work 3 nco 0 22 CM7baRk[1PkIC;@4dUgF92
 l4121
 L15
 VPlGDN<`MiKdzX9CVR7NI53
+!s100 bOoKDmS3RMb@BY1==6T>a2
 R7
 32
 R8
@@ -38,10 +39,9 @@ R9
 R10
 R11
 R12
-!s100 bOoKDmS3RMb@BY1==6T>a2
 !i10b 1
 Enco_tb
-Z13 w1727831504
+Z13 w1728239877
 R1
 R2
 R3
@@ -55,7 +55,7 @@ V;Vl;dGmWFIU86^ddH1VE?3
 R7
 32
 !i10b 1
-Z16 !s108 1727903365.152000
+Z16 !s108 1728239888.049000
 Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|C:/Users/davle/Documents/UBA/CESE/MyS/MyS_tp_FPGA/src/NCO_tb.vhd|
 Z18 !s107 C:/Users/davle/Documents/UBA/CESE/MyS/MyS_tp_FPGA/src/NCO_tb.vhd|
 R11
@@ -67,8 +67,8 @@ R3
 Z19 DEx4 work 6 nco_tb 0 22 ;Vl;dGmWFIU86^ddH1VE?3
 l26
 L8
-Z20 VA9QP^hb6iYLoG:j^z=KXV1
-Z21 !s100 63Knm^Q9k?f5L0o602eRO2
+VB9F04YS]^W1Bf97:HK<@G1
+!s100 EiS;;LW@QR=GodObfhBKV3
 R7
 32
 !i10b 1

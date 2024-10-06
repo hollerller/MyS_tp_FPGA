@@ -9,15 +9,14 @@
 #include "xparameters.h"
 #include "xgpio.h"
 #include "NCO.h"
-
+#include <unistd.h>
 
 int main (void)
 {
 	XGpio phaseControl, rstEna;
-	int i, phaseControl_test, rstEna_test;
-	int pha_i[4] = {1280, 2830, 3500, 4240};
-	int buttonState = 0;
-	int nextState = 0;
+	int phaseControl_sw;	// Variable para almacenar el incremento de fase a enviar al NCO
+	int pha_i[4] = {600, 1400, 2500, 3700};
+	int buttonState = 0;	// Variable para almacenar la lectura del boton
 
 	xil_printf("-- Start of the Program --\r\n");
 
@@ -28,42 +27,65 @@ int main (void)
 	// Inicializar botones
 	XGpio_Initialize(&rstEna, XPAR_BUTTONS_DEVICE_ID);
 	XGpio_SetDataDirection(&rstEna, 1, 0xFFFFFFFF);
+
+	// Envio valor inicial al registro del NCO, rst = 1 ena = 0
 	Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x1));
 
 	while (1){
 
+		// Leer el estado de los botones
 		buttonState = XGpio_DiscreteRead(&rstEna, 1);
 
+		// Condicional para evaluar lectura de los botones
 		if (buttonState == 1) {
-			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x0));
-		} else if (buttonState == 2){
+
+			// Al presionar el boton 1, se envia el reset en 1 al registro 0 del NCO
+			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x1));
+
+			} else if (buttonState == 2){
+
+			// Al presionar el boton 2, se envia el habilitador en 1 y el reset en 0 para habilitar la señal
 			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG0_OFFSET), (u32)(0x2));
+
 		}
 
+		// Imprime el estado de los botones
 		xil_printf("button Status %x\r\n", buttonState);
 
-		phaseControl_test = XGpio_DiscreteRead(&phaseControl, 1);
+		// Leer el estado de los switches
+		phaseControl_sw = XGpio_DiscreteRead(&phaseControl, 1);
 
-		switch (phaseControl_test){
+		// Manejar el incremento de fase dependiendo del estado de los switches
+		switch (phaseControl_sw){
 		case 0:
+
+			// Envia el incremento de fase correspondiente al registro 1 del NCO
 			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[0]));
 			xil_printf("Phase Increment %i\r\n", pha_i[0]);
 			break;
+
 		case 1:
+			// Envia el incremento de fase correspondiente al registro 1 del NCO
 			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[1]));
 			xil_printf("Phase Increment %i\r\n", pha_i[1]);
 			break;
+
+			// Envia el incremento de fase correspondiente al registro 1 del NCO
 		case 2:
 			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[2]));
 			xil_printf("Phase Increment %i\r\n", pha_i[2]);
 			break;
+
+			// Envia el incremento de fase correspondiente al registro 1 del NCO
+
 		case 3:
 			Xil_Out32((XPAR_NCO_0_S00_AXI_BASEADDR) + (NCO_S00_AXI_SLV_REG1_OFFSET), (u32)(pha_i[3]));
 			xil_printf("Phase Increment %i\r\n", pha_i[3]);
 			break;
-
 			}
-		xil_printf("Switches Status %x\r\n", phaseControl_test);
+
+		// Imprime el estado de los switches
+		xil_printf("Switches Status %x\r\n", phaseControl_sw);
 
 		sleep(1);
 

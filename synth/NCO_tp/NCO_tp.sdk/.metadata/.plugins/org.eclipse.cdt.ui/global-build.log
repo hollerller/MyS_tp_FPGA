@@ -942,3 +942,550 @@ make pre-build main-build
 a9-linaro-pre-build-step
  
 make: No se hace nada para `main-build'.
+04:01:58 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:92:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:28: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int i, phaseControl_test, rstEna_test;
+                            ^~~~~~~~~~~
+../src/main.c:17:6: warning: unused variable 'i' [-Wunused-variable]
+  int i, phaseControl_test, rstEna_test;
+      ^
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23972	   1184	  22584	  47740	   ba7c	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:02:07 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:92:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23972	   1184	  22584	  47740	   ba7c	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:02:46 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:92:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23972	   1184	  22584	  47740	   ba7c	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:04:16 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+04:05:06 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:93:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23996	   1184	  22584	  47764	   ba94	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:05:12 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+04:05:25 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+04:07:59 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:93:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23996	   1184	  22584	  47764	   ba94	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:08:05 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+04:25:17 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:95:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23932	   1184	  22584	  47700	   ba54	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:25:35 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+04:32:53 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:95:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23932	   1184	  22584	  47700	   ba54	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:33:21 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+04:34:38 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:69:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:36:13 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:68:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+../src/main.c:17:25: warning: unused variable 'rstEna_test' [-Wunused-variable]
+  int phaseControl_test, rstEna_test;
+                         ^~~~~~~~~~~
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:42:41 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:68:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+04:43:14 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:68:3: warning: implicit declaration of function 'sleep'; did you mean 'strsep'? [-Wimplicit-function-declaration]
+   sleep(1);
+   ^~~~~
+   strsep
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:05:27 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:06:32 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:56:3: error: 'phaseControl_sw' undeclared (first use in this function); did you mean 'phaseControl_test'?
+   phaseControl_sw = XGpio_DiscreteRead(&phaseControl, 1);
+   ^~~~~~~~~~~~~~~
+   phaseControl_test
+../src/main.c:56:3: note: each undeclared identifier is reported only once for each function it appears in
+../src/main.c:17:6: warning: unused variable 'phaseControl_test' [-Wunused-variable]
+  int phaseControl_test; // Variable para almacenar el incremento de fase a enviar al NCO
+      ^~~~~~~~~~~~~~~~~
+make: *** [src/main.o] Error 1
+05:06:45 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:06:54 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+05:08:17 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:08:26 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+05:13:29 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:13:34 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+05:14:18 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:14:27 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+05:15:23 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:15:30 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+05:16:59 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:17:05 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.
+05:17:34 **** Auto Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+Building file: ../src/main.c
+Invoking: ARM v7 gcc compiler
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../standalone_bsp_0/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+Finished building: ../src/main.c
+ 
+Building target: NCO_sw.elf
+Invoking: ARM v7 gcc linker
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../standalone_bsp_0/ps7_cortexa9_0/lib -o "NCO_sw.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+Finished building target: NCO_sw.elf
+ 
+Invoking: ARM v7 Print Size
+arm-none-eabi-size NCO_sw.elf  |tee "NCO_sw.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  23844	   1184	  22584	  47612	   b9fc	NCO_sw.elf
+Finished building: NCO_sw.elf.size
+ 
+05:17:52 **** Incremental Build of configuration Debug for project NCO_sw ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+ 
+make: No se hace nada para `main-build'.

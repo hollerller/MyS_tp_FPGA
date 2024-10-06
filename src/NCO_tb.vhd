@@ -26,9 +26,11 @@ architecture NCO_tb_arch of NCO_tb is
 begin
         -- behavior
 
-	clk_tb <= not clk_tb after 20 ns;		
+	clk_tb <= not clk_tb after 4 ns;		
 	rst_tb <= '0' after 20 ns;
+	ena_tb <= '1' after 20 ns, '0' after 100 ns, '1' after 200 ns;
 	ena_tb <= '1' after 40 ns;
+
 
 	DUT: NCO
 		port map(
